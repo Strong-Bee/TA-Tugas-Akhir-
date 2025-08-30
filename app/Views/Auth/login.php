@@ -14,10 +14,10 @@
 	<link rel="shortcut icon" href="favicon.ico">
 
 	<!-- FontAwesome JS-->
-	<script defer src="<?= base_url('assets/plugins/fontawesome/js/all.min.js'); ?>"></script>
+	<script defer src="assets/plugins/fontawesome/js/all.min.js"></script>
 
 	<!-- App CSS -->
-	<link id="theme-style" rel="stylesheet" href="<?= base_url('assets/css/portal.css'); ?>">
+	<link id="theme-style" rel="stylesheet" href="assets/css/portal.css">
 
 </head>
 
@@ -32,11 +32,11 @@
 						<form class="auth-form login-form">
 							<div class="email mb-3">
 								<label class="sr-only" for="signin-email">Email</label>
-								<input id="signin-email" name="signin-email" type="email" class="form-control signin-email" placeholder="Email address" required="required">
+								<input id="signin-email" name="email" type="email" class="form-control signin-email" placeholder="Email address" required="required">
 							</div><!--//form-group-->
 							<div class="password mb-3">
 								<label class="sr-only" for="signin-password">Password</label>
-								<input id="signin-password" name="signin-password" type="password" class="form-control signin-password" placeholder="Password" required="required">
+								<input id="signin-password" name="password" type="password" class="form-control signin-password" placeholder="Password" required="required">
 								<div class="extra mt-3 row justify-content-between">
 									<div class="col-6">
 										<div class="form-check">
@@ -79,10 +79,6 @@
 			<div class="auth-background-overlay p-3 p-lg-5">
 				<div class="d-flex flex-column align-content-end h-100">
 					<div class="h-100"></div>
-					<div class="overlay-content p-3 p-lg-4 rounded">
-						<h5 class="mb-3 overlay-title">Explore Portal Admin Template</h5>
-						<div>Portal is a free Bootstrap 5 admin dashboard template. You can download and view the template license <a href="https://themes.3rdwavemedia.com/bootstrap-templates/admin-dashboard/portal-free-bootstrap-admin-dashboard-template-for-developers/">here</a>.</div>
-					</div>
 				</div>
 			</div><!--//auth-background-overlay-->
 		</div><!--//auth-background-col-->

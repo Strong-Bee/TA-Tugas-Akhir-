@@ -8,4 +8,14 @@ class Home extends BaseController
     {
         return view('Auth/login');
     }
+    
+    public function register(): string
+    {
+        return view('Auth/signup');
+    }
+
+    public function reset_password(): string
+    {
+        return view('Auth/reset-password');
+    }
 }
