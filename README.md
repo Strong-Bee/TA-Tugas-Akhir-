@@ -35,7 +35,7 @@ Dengan sistem ini, karyawan dapat melakukan pengajuan secara online dan atasan d
 - **Frontend** : Bootstrap 5 (HTML, CSS, JS)
 - **Database** : MySQL/MariaDB
 - **Server Requirement** :
-  - PHP >= 7.4
+  - PHP >= 8.4
   - Composer
   - MySQL/MariaDB
 
