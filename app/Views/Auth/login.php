@@ -48,7 +48,7 @@
 									</div>
 									<div class="col-6">
 										<div class="forgot-password text-end">
-											<a href="reset-password.html">Forgot password?</a>
+											<a href="<?= base_url('Reset-Password') ?>">Forgot password?</a>
 										</div>
 									</div>
 								</div>
@@ -58,7 +58,7 @@
 							</div>
 						</form>
 
-						<div class="auth-option text-center pt-5">No Account? Sign up <a class="text-link" href="signup.html">here</a>.</div>
+						<div class="auth-option text-center pt-5">No Account? Sign up <a class="text-link" href="<?= base_url('Register') ?>">here</a>.</div>
 					</div>
 
 				</div>

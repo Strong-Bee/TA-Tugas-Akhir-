@@ -60,7 +60,7 @@
 								<button type="submit" class="btn app-btn-primary w-100 theme-btn mx-auto">Sign Up</button>
 							</div>
 						</form>
-						<div class="auth-option text-center pt-5">Already have an account? <a class="text-link" href="login.html">Log in</a></div>
+						<div class="auth-option text-center pt-5">Already have an account? <a class="text-link" href="<?= base_url('/') ?>">Log in</a></div>
 					</div>
 				</div>
 			</div>
