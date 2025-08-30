@@ -1,0 +1,5 @@
+# Atur line endings
+* text=auto
+
+# Force PHP pakai LF
+*.php text eol=lf

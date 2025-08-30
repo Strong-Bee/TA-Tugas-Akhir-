@@ -92,7 +92,7 @@ Dengan sistem ini, karyawan dapat melakukan pengajuan secara online dan atasan d
 
    ```env
    database.default.hostname = localhost
-   database.default.database = nama_database
+   database.default.database = system-pengajuan
    database.default.username = root
    database.default.password = 
    database.default.DBDriver = MySQLi
