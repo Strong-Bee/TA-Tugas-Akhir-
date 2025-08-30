@@ -11,16 +11,16 @@ $routes->get('/Reset-password', 'Auth\ResetPasswordController::index');
 
 // Super Admin
 $routes->group('Super Admin', function ($routes) {
-    $routes->get('/', 'AdminController::index');
-    $routes->get('users', 'AdminController::users');
-    $routes->get('reports', 'AdminController::reports');
+    $routes->get('/', 'SuperAdmin\DashboardController::index');
+    $routes->get('users', 'SuperAdmin\DashboardController::users');
+    $routes->get('reports', 'SuperAdmin\DashboardController::reports');
 });
 
 // Admin
 $routes->group('Admin', function ($routes) {
-    $routes->get('/', 'AdminController::index');
-    $routes->get('users', 'AdminController::users');
-    $routes->get('reports', 'AdminController::reports');
+    $routes->get('/', 'Admin\DashboardController::index');
+    $routes->get('users', 'Admin\DashboardController::users');
+    $routes->get('reports', 'Admin\DashboardController::reports');
 });
 
 // Karyawan
