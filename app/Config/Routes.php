@@ -6,26 +6,23 @@ use CodeIgniter\Router\RouteCollection;
  * @var RouteCollection $routes
  */
 $routes->get('/', 'Auth\LoginController::index');
+$routes->post('Proses-Login', 'Auth\LoginController::proseslogin');
+
 $routes->get('/Register', 'Auth\RegisterController::index');
+$routes->post('proses-register', 'Auth\RegisterController::register');
+
 $routes->get('/Reset-password', 'Auth\ResetPasswordController::index');
 
-// Super Admin
-$routes->group('Super Admin', function ($routes) {
-    $routes->get('/', 'SuperAdmin\DashboardController::index');
-    $routes->get('users', 'SuperAdmin\DashboardController::users');
-    $routes->get('reports', 'SuperAdmin\DashboardController::reports');
+// halaman dashboard umum (hanya user login)
+$routes->get('Karyawan', 'Dashboard::index', ['filter' => 'auth']);
+
+// group admin
+$routes->group('Admin', ['filter' => 'auth:admin'], function ($routes) {
+    $routes->get('', 'Admin\Dashboard::index');
+    // other admin routes
 });
 
-// Admin
-$routes->group('Admin', function ($routes) {
-    $routes->get('/', 'Admin\DashboardController::index');
-    $routes->get('users', 'Admin\DashboardController::users');
-    $routes->get('reports', 'Admin\DashboardController::reports');
-});
-
-// Karyawan
-$routes->group('Karyawan', function ($routes) {
-    $routes->get('/', 'Karyawan\DashboardController::index');
-    $routes->get('users', 'Karyawan\DashboardController::users');
-    $routes->get('reports', 'Karyawan\DashboardController::reports');
+// group superadmin
+$routes->group('Super Admin', ['filter' => 'auth:superadmin'], function ($routes) {
+    $routes->get('', 'SuperAdmin\Dashboard::index');
 });

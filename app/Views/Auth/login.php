@@ -29,14 +29,26 @@
 					<div class="app-auth-branding mb-4"><a class="app-logo" href="index.html"><img class="logo-icon me-2" src="assets/images/app-logo.svg" alt="logo"></a></div>
 					<h2 class="auth-heading text-center mb-5">Log in to Portal</h2>
 					<div class="auth-form-container text-start">
-						<form class="auth-form login-form">
-							<div class="email mb-3">
-								<label class="sr-only" for="signin-email">Email</label>
-								<input id="signin-email" name="email" type="email" class="form-control signin-email" placeholder="Email address" required="required">
-							</div><!--//form-group-->
-							<div class="password mb-3">
+						<?php if (session()->getFlashdata('error')): ?>
+							<div class="alert alert-danger"><?= session()->getFlashdata('error') ?></div>
+						<?php endif; ?>
+
+						<form class="auth-form login-form" action="<?= base_url('Proses-Login') ?>" method="POST">
+							<?= csrf_field() ?>
+
+							<div class="mb-3">
+								<label class="sr-only" for="signin-username">Username / Email</label>
+								<input id="signin-username" name="username" type="text"
+									class="form-control signin-username"
+									placeholder="Username atau Email" required="required">
+							</div>
+
+							<div class="mb-3">
 								<label class="sr-only" for="signin-password">Password</label>
-								<input id="signin-password" name="password" type="password" class="form-control signin-password" placeholder="Password" required="required">
+								<input id="signin-password" name="password" type="password"
+									class="form-control signin-password"
+									placeholder="Password" required="required">
+
 								<div class="extra mt-3 row justify-content-between">
 									<div class="col-6">
 										<div class="form-check">
@@ -48,16 +60,16 @@
 									</div>
 									<div class="col-6">
 										<div class="forgot-password text-end">
-											<a href="<?= base_url('Reset-Password') ?>">Forgot password?</a>
+											<a href="<?= base_url('reset-password') ?>">Forgot password?</a>
 										</div>
 									</div>
 								</div>
 							</div>
+
 							<div class="text-center">
 								<button type="submit" class="btn app-btn-primary w-100 theme-btn mx-auto">Log In</button>
 							</div>
 						</form>
-
 						<div class="auth-option text-center pt-5">No Account? Sign up <a class="text-link" href="<?= base_url('Register') ?>">here</a>.</div>
 					</div>
 

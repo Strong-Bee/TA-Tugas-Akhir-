@@ -27,26 +27,32 @@
 			<div class="d-flex flex-column align-content-end">
 				<div class="app-auth-body mx-auto">
 					<div class="app-auth-branding mb-4"><a class="app-logo" href="index.html"><img class="logo-icon me-2" src="assets/images/app-logo.svg" alt="logo"></a></div>
-					<h2 class="auth-heading text-center mb-4">Sign up to Portal</h2>
+					<h2 class="auth-heading text-center mb-4">Sign up to Portal Pengajuan</h2>
 
 					<div class="auth-form-container text-start mx-auto">
-						<form class="auth-form auth-signup-form">
-							<div class="email mb-3">
-								<label class="sr-only" for="signup-email">Your Name</label>
-								<input id="signup-name" name="signup-name" type="text" class="form-control signup-name" placeholder="Full name" required="required">
+						<form class="auth-form auth-signup-form" action="<?= base_url('proses-register') ?>" method="POST">
+							<?= csrf_field() ?>
+
+							<div class="mb-3">
+								<label class="sr-only" for="signup-name">Full Name</label>
+								<input id="signup-name" name="name" type="text" class="form-control signup-name" placeholder="Full name" required="required" value="<?= set_value('name') ?>">
 							</div>
-							<div class="email mb-3">
-								<label class="sr-only" for="signup-email">Username</label>
-								<input id="signup-name" name="username" type="text" class="form-control signup-name" placeholder="Username" required="required">
+
+							<div class="mb-3">
+								<label class="sr-only" for="signup-username">Username</label>
+								<input id="signup-username" name="username" type="text" class="form-control signup-username" placeholder="Username" required="required" value="<?= set_value('username') ?>">
 							</div>
-							<div class="email mb-3">
-								<label class="sr-only" for="signup-email">Your Email</label>
-								<input id="signup-email" name="email" type="email" class="form-control signup-email" placeholder="Email" required="required">
+
+							<div class="mb-3">
+								<label class="sr-only" for="signup-email">Email</label>
+								<input id="signup-email" name="email" type="email" class="form-control signup-email" placeholder="Email" required="required" value="<?= set_value('email') ?>">
 							</div>
-							<div class="password mb-3">
+
+							<div class="mb-3">
 								<label class="sr-only" for="signup-password">Password</label>
 								<input id="signup-password" name="password" type="password" class="form-control signup-password" placeholder="Create a password" required="required">
 							</div>
+
 							<div class="extra mb-3">
 								<div class="form-check">
 									<input class="form-check-input" type="checkbox" value="" id="RememberPassword">
